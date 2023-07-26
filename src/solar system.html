@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sun</title>
+    <style>
+        /* Set the background image for the body element */
+        body {
+            background-image: url('/pictures/stars.jpeg');
+            background-size: cover; /* Adjust as needed */
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        @font-face {
+            font-family: 'Akira';
+            src: url('Fonts/Akira.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'Geosans';
+            src: url('Fonts/Geosans.otf') format('opentype');
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Style the text */
+        h1 {
+            color: white;
+            font-size: 3.8em;
+            font-family: "Akira", sans-serif;
+            justify-content: center;
+            top: 43%;
+            text-shadow: 3px 3px 4px #e17a95,
+            79px 0px 10px transparent,
+            20px 89px 10px transparent;
+        }
+        .navbar {
+            overflow: hidden;
+            font-family: "Geosans", sans-serif;
+        }
+
+        .navbar a {
+            font-size: 18px;
+            font-family: "Geosans", sans-serif;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 19px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: #ffffff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="buttons">
+
+</div>
+<div class="navbar">
+    <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction('solar-system')">Solar system
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="solar-system">
+            <a href="#">Sun</a>
+            <a href="#">Mercury</a>
+            <a href="#">Venus</a>
+            <a href="#">Earth</a>
+            <a href="#">Mars</a>
+            <a href="#">Jupiter</a>
+            <a href="#">Saturn</a>
+            <a href="#">Uranus</a>
+            <a href="#">Neptune</a>
+            <a href="#">Pluto</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction('black-holes')">Black holes
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="black-holes">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction('galaxies')">Galaxies
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="galaxies">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction('stars')">Stars
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="stars">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="action_btn">
+    <h1></h1>
+</div>
+
+</body>
+<script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction(dropdownId) {
+        var dropdown = document.getElementById(dropdownId);
+        dropdown.classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+        if (!e.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var dropdown = dropdowns[i];
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+</script>
+</html>
